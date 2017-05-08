@@ -32,6 +32,7 @@ public class InstantiationTracingBeanPostProcessor implements
 	private static boolean flag = true;
 
 	public void onApplicationEvent(ContextRefreshedEvent event) {
+		System.out.println(flag);
 		if (flag) {
 			System.out.println("初始化开始");
 			List<scheduleJob> list = schedulerService.getAll();

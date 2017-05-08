@@ -44,7 +44,7 @@ public class MailUitls {
 			message.setContent(
 					"<h1>这是今天为您推荐的歌曲</h1><h3><a target='_BLANK' href='"
 							+ songUrl + "'>" + songName
-							+ "</a></h3><h3><a target='_BLANK' href='http://localhost/user/getTask?userId="
+							+ "</a></h3><h3><a target='_BLANK' href='http://98.142.133.78:8080/user/getTask?userId="
 							+ id + "'>您可以点此链接修改发送时间和发送邮件地址</a></h3>",
 					"text/html;charset=UTF-8");
 

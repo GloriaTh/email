@@ -1,10 +1,10 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
-    <link rel="stylesheet" type="text/css" href="/js/main.css" />
-	<link rel="stylesheet" type="text/css" href="/css/default/easyui.css">
-	<link rel="stylesheet" type="text/css" href="/css/icon.css">
-	<link rel="stylesheet" type="text/css" href="/css/button.css">
+    <link rel="stylesheet" type="text/css" href="./js/main.css" />
+	<link rel="stylesheet" type="text/css" href="./css/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="./css/icon.css">
+	<link rel="stylesheet" type="text/css" href="./css/button.css">
 	<style type="text/css">
 		    body {  
     font: normal 11px auto "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;  
@@ -81,10 +81,10 @@ th.specalt {
 }
 	</style>
 	<head>
-    <script type="text/javascript" src="/js/jquery.js"></script>
-    <script type="text/javascript" src="/js/jquery.fancybox-1.3.1.pack.js"></script>
-    <script type="text/javascript" src="/js/easy-ui/jquery.easyui.min.js"></script>
-    <script type="text/javascript" src="/js/main/login.js"></script>
+    <script type="text/javascript" src="./js/jquery.js"></script>
+    <script type="text/javascript" src="./js/jquery.fancybox-1.3.1.pack.js"></script>
+    <script type="text/javascript" src="./js/easy-ui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="./js/main/login.js"></script>
 	<script type="text/javascript"> 
 $(document).ready(function() {
 	$('#login').click(function(){

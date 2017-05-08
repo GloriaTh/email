@@ -7,6 +7,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.study.bean.user;
@@ -27,6 +28,7 @@ public class UserServiceImpl implements UserService {
 		userDao.save(user);
 	}
 
+	@Transactional(propagation = Propagation.REQUIRED)
 	public void update(user user) {
 		userDao.update(user);
 	}
@@ -54,6 +56,7 @@ public class UserServiceImpl implements UserService {
 		for (user u : list) {
 			userEx userEx = new userEx();
 			userEx.setUserId(u.getUserId());
+			userEx.setJobName(u.getJob().getJobName());
 			userEx.setEmail(u.getEmail());
 			userEx.setJob(u.getJob().getCronExpression());
 			if (u.getJob().getIsSend() == 0) {

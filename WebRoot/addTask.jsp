@@ -4,10 +4,10 @@
 <html>
 	<head>
 		<title>音乐推荐</title>
-		<link rel="stylesheet" type="text/css" href="/css/icon.css">
-		<link rel="stylesheet" type="text/css" href="/css/button.css">
-		<link rel="stylesheet" type="text/css" href="/js/fancybox.css" />
-		<link rel="stylesheet" type="text/css" href="/css/default/easyui.css">
+		<link rel="stylesheet" type="text/css" href="./css/icon.css">
+		<link rel="stylesheet" type="text/css" href="./css/button.css">
+		<link rel="stylesheet" type="text/css" href="./js/fancybox.css" />
+		<link rel="stylesheet" type="text/css" href="./css/default/easyui.css">
 		<style type="text/css">
 table {
 	border: 1px solid #E4E4E4;
@@ -51,6 +51,15 @@ table {
 						<td>
 							<input class="easyui-validatebox textbox" type="text" id="email" data-options="missingMessage:'请输入邮箱号',invalidMessage:'邮箱格式不正确',required:true,validType:'email'"
 							 value="${requestScope.job.email}"	name="email"></input>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font style="font-weight: bold">任务名:</font>
+						</td>
+						<td>
+							<input class="easyui-validatebox textbox" type="text" id="jobName" data-options="missingMessage:'请输入任务名',required:true"
+							 value="${requestScope.job.jobName}"	name="jobName"></input>
 						</td>
 					</tr>
 					<tr>

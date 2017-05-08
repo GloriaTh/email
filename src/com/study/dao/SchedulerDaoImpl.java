@@ -6,6 +6,8 @@ import javax.annotation.Resource;
 
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.study.bean.scheduleJob;
 
@@ -19,6 +21,7 @@ public class SchedulerDaoImpl implements SchedulerDao {
 		factory.getCurrentSession().persist(job);
 	}
 
+	@Transactional(propagation = Propagation.REQUIRED)
 	public void updateTask(scheduleJob job) {
 		factory.getCurrentSession().merge(job);
 	}

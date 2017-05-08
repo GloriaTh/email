@@ -4,16 +4,16 @@
 <html>
 	<head>
 		<title>音乐推荐</title>
-		<link rel="stylesheet" type="text/css" href="/css/icon.css">
-		<link rel="stylesheet" type="text/css" href="/css/button.css">
-		<link rel="stylesheet" type="text/css" href="/js/fancybox.css" />
-		<link rel="stylesheet" type="text/css" href="/css/default/easyui.css">
+		<link rel="stylesheet" type="text/css" href="../css/icon.css">
+		<link rel="stylesheet" type="text/css" href="../css/button.css">
+		<link rel="stylesheet" type="text/css" href="../js/fancybox.css" />
+		<link rel="stylesheet" type="text/css" href="../css/default/easyui.css">
 		<style type="text/css">
 body {
 	font: normal 11px auto "Trebuchet MS", Verdana, Arial, Helvetica,
 		sans-serif;
 	color: #4f6b72;
-	background: url(/css/images/b2.jpg) no-repeat center center;
+	background: url(../css/images/b2.jpg) no-repeat center center;
 }
 
 h1 {
@@ -38,10 +38,10 @@ table {
 	text-shadow: 1px 1px 1px #FFF;
 }
 </style>
-		<script type="text/javascript" src="/js/jquery.js"></script>
-		<script type="text/javascript" src="/js/jquery.fancybox-1.3.1.pack.js"></script>
-		<script type="text/javascript" src="/js/easy-ui/jquery.easyui.min.js"></script>
-		<script type="text/javascript" src="/js/main/updateTask.js"></script>
+		<script type="text/javascript" src="../js/jquery.js"></script>
+		<script type="text/javascript" src="../js/jquery.fancybox-1.3.1.pack.js"></script>
+		<script type="text/javascript" src="../js/easy-ui/jquery.easyui.min.js"></script>
+		<script type="text/javascript" src="../js/main/updateTask.js"></script>
 		<script type="text/javascript">
 	$(document).ready(function() {
 		$("#hour").val("${requestScope.job.hour}");
@@ -77,6 +77,15 @@ table {
 						<td>
 							<input class="easyui-validatebox textbox" type="text" id="email" data-options="missingMessage:'请输入邮箱号',invalidMessage:'邮箱格式不正确',required:true,validType:'email'"
 							 value="${requestScope.job.email}"	name="email"></input>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font style="font-weight: bold">任务名:</font>
+						</td>
+						<td>
+							<input class="easyui-validatebox textbox" type="text" id="jobName" data-options="missingMessage:'请输入任务名',required:true"
+							 value="${requestScope.job.jobName}"	name="jobName"></input>
 						</td>
 					</tr>
 					<tr>

@@ -57,12 +57,13 @@ public class MusicCrawler extends Thread implements PageProcessor {
 	}
 
 	public void getMusic(int page) {
+		System.out.println("获取音乐数据");
 		songs.clear();
 		s = Spider.create(new MusicCrawler()).addUrl(
 				"http://5sing.kugou.com/gd/gdList?&type=0&page=" + page)
 				.thread(20);
 		s.run();
-		System.out.println("over11");
+		System.out.println("获取音乐数据完成");
 	}
 
 	public static String getText(String ele) {

@@ -16,6 +16,8 @@ import org.quartz.TriggerKey;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.study.bean.scheduleJob;
 import com.study.dao.SchedulerDao;
@@ -36,6 +38,7 @@ public class SchedulerServiceImpl implements SchedulerService {
 		}
 	}
 
+	@Transactional(propagation = Propagation.REQUIRED)
 	public void updateTask(scheduleJob job, int isSend, int send) {
 		schedulerdao.updateTask(job);
 
@@ -63,6 +66,7 @@ public class SchedulerServiceImpl implements SchedulerService {
 	}
 
 	public void add(scheduleJob job) {
+		System.out.println("添加定时任务"+job.getJobId());
 		Scheduler scheduler = schedulerFactoryBean.getScheduler();
 		TriggerKey triggerKey = TriggerKey.triggerKey(job.getJobName(), job
 				.getJobGroup());
@@ -101,6 +105,7 @@ public class SchedulerServiceImpl implements SchedulerService {
 			// 按新的trigger重新设置job执行
 			try {
 				scheduler.rescheduleJob(triggerKey, trigger);
+				System.out.println("添加定时任务"+job.getJobId()+"完成");
 			} catch (SchedulerException e) {
 				e.printStackTrace();
 			}
@@ -108,6 +113,7 @@ public class SchedulerServiceImpl implements SchedulerService {
 	}
 
 	public void update(scheduleJob job) {
+		System.out.println("修改并开启定时任务"+job.getJobId());
 		Scheduler scheduler = schedulerFactoryBean.getScheduler();
 		TriggerKey triggerKey = TriggerKey.triggerKey(job.getJobName(), job
 				.getJobGroup());
@@ -127,16 +133,19 @@ public class SchedulerServiceImpl implements SchedulerService {
 		// 按新的trigger重新设置job执行
 		try {
 			scheduler.rescheduleJob(triggerKey, trigger);
+			System.out.println("修改并开启定时任务"+job.getJobId()+"完成");
 		} catch (SchedulerException e) {
 			e.printStackTrace();
 		}
 	}
 
 	public void delete(scheduleJob job) {
+		System.out.println("删除定时任务"+job.getJobId());
 		Scheduler scheduler = schedulerFactoryBean.getScheduler();
 		JobKey jobKey = JobKey.jobKey(job.getJobName(), job.getJobGroup());
 		try {
 			scheduler.deleteJob(jobKey);
+			System.out.println("删除定时任务"+job.getJobId()+"完成");
 		} catch (SchedulerException e) {
 			e.printStackTrace();
 		}

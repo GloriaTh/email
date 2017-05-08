@@ -2,12 +2,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-	<link rel="stylesheet" type="text/css" href="/js/main.css" />
-	<link rel="stylesheet" type="text/css" href="/css/jquery-ui.css" />
-	<link rel="stylesheet" type="text/css" href="/css/default/easyui.css">
-	<link rel="stylesheet" type="text/css" href="/css/icon.css">
-	<link rel="stylesheet" type="text/css" href="/js/fancybox.css" />
-	<link rel="stylesheet" type="text/css" href="/css/button.css" />
+	<link rel="stylesheet" type="text/css" href="./js/main.css" />
+	<link rel="stylesheet" type="text/css" href="./css/jquery-ui.css" />
+	<link rel="stylesheet" type="text/css" href="./css/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="./css/icon.css">
+	<link rel="stylesheet" type="text/css" href="./js/fancybox.css" />
+	<link rel="stylesheet" type="text/css" href="./css/button.css" />
 	<style type="text/css">
 	    body {  
     font: normal 11px auto "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;  
@@ -85,10 +85,10 @@ th.specalt {
 	</style>
 		<script type="text/javascript" language="javascript"
 			src="/js/jquery.js"></script>
-		<script type="text/javascript" src="/js/jquery-ui.js"></script>
-		<script type="text/javascript" src="/js/easy-ui/jquery.easyui.min.js"></script>
-		<script type="text/javascript" src="/js/jquery.fancybox-1.3.1.pack.js"></script>
-		<script type="text/javascript" src="/js/main/main.js"></script>
+		<script type="text/javascript" src="./js/jquery-ui.js"></script>
+		<script type="text/javascript" src="./js/easy-ui/jquery.easyui.min.js"></script>
+		<script type="text/javascript" src="./js/jquery.fancybox-1.3.1.pack.js"></script>
+		<script type="text/javascript" src="./js/main/main.js"></script>
 	<script type="text/javascript">
 $(document).ready(function() {
 	function getTask(thisp){
@@ -104,6 +104,7 @@ $(document).ready(function() {
 				$("#tb").append(
 						"<tr align='center' style='cursor: pointer'><td><input class='selete' type='checkbox' value='"+value.userId+"'></td>"+
 						"<td name='"+value.userId+"' class='Change'><a>"+value.userId+"</a></td>"+
+						"<td name='"+value.userId+"' class='Change'><a>"+value.jobName+"</a></td>"+
 						"<td name='"+value.userId+"' class='Change'>"+value.email+"</td>"+
 						"<td name='"+value.userId+"' class='Change'>"+value.job+"</td>"+
 						"<td name='"+value.userId+"' class='Change'>"+value.isSend+"</td></tr>"
@@ -131,10 +132,10 @@ $(document).ready(function() {
 				handler:function(){
 				    $.fancybox({
 			            width:390,
-						height:170,
+						height:190,
 			            href: "${pageContext.request.contextPath}/addTask.jsp",
 			            onClosed:function(){
-				            getTask(thisPage);
+				            getTask(thisp);
 				        }
 			        });
 				}
@@ -156,7 +157,7 @@ $(document).ready(function() {
         var thisPage = $('#pp').pagination('options').pageNumber;
 		$.fancybox({
             width:390,
-			height:170,
+			height:190,
             href: "${pageContext.request.contextPath}/user/getTaskM?userId="+id,
             onClosed:function(){
 	            getTask(thisPage);
@@ -174,7 +175,10 @@ $(document).ready(function() {
 							<input id="Songall" type="checkbox" value="0">
 						</td>
 						<td>
-							用户名
+							用户id
+						</td>
+						<td>
+							任务名
 						</td>
 						<td>
 							邮件地址

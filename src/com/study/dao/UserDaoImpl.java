@@ -6,6 +6,8 @@ import javax.annotation.Resource;
 
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.study.bean.user;
 
@@ -23,6 +25,7 @@ public class UserDaoImpl implements UserDao {
 		factory.getCurrentSession().persist(user);
 	}
 
+	@Transactional(propagation = Propagation.REQUIRED)
 	public void update(user user) {
 		factory.getCurrentSession().merge(user);
 	}

@@ -4,15 +4,15 @@
 <html>
 	<head>
 		<title>音乐推荐</title>
-		<link rel="stylesheet" type="text/css" href="/css/icon.css">
-		<link rel="stylesheet" type="text/css" href="/css/button.css">
-		<link rel="stylesheet" type="text/css" href="/js/fancybox.css"/>
+		<link rel="stylesheet" type="text/css" href="./css/icon.css">
+		<link rel="stylesheet" type="text/css" href="./css/button.css">
+		<link rel="stylesheet" type="text/css" href="./js/fancybox.css"/>
 		<style type="text/css">
 body {
 	font: normal 11px auto "Trebuchet MS", Verdana, Arial, Helvetica,
 		sans-serif;
 	color: #4f6b72;
-	background: url(/css/images/b2.jpg) no-repeat center center;
+	background: url(./css/images/b2.jpg) no-repeat center center;
 }
 
 h1 {
@@ -34,9 +34,9 @@ h3 {
 	font-weight: 400;
 }
 </style>
-		<script type="text/javascript" src="/js/jquery.js"></script>
-		<script type="text/javascript" src="/js/jquery.fancybox-1.3.1.pack.js"></script>
-		<script type="text/javascript" src="/js/main/index.js"></script>
+		<script type="text/javascript" src="./js/jquery.js"></script>
+		<script type="text/javascript" src="./js/jquery.fancybox-1.3.1.pack.js"></script>
+		<script type="text/javascript" src="./js/main/index.js"></script>
 		<script type="text/javascript">
 	
 </script>
