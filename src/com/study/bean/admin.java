@@ -12,18 +12,19 @@ import javax.persistence.Id;
 public class admin {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer adminId;
+	private int adminId;
 	@Column
 	private String adminName;
 
 	@Column
 	private String adminPassword;
 
-	public Integer getAdminId() {
+	
+	public int getAdminId() {
 		return adminId;
 	}
 
-	public void setAdminId(Integer adminId) {
+	public void setAdminId(int adminId) {
 		this.adminId = adminId;
 	}
 

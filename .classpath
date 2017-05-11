@@ -79,6 +79,6 @@
 	<classpathentry kind="lib" path="lib/webmagic-extension-0.6.1.jar"/>
 	<classpathentry kind="lib" path="lib/xsoup-0.3.1.jar"/>
 	<classpathentry kind="lib" path="lib/mail.jar"/>
-	<classpathentry kind="lib" path="lib/quartz-2.1.7.jar"/>
+	<classpathentry kind="lib" path="lib/quartz-2.2.3.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>

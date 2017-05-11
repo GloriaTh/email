@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+
 /*
  * 定时任务
  */
@@ -14,7 +15,7 @@ import javax.persistence.OneToOne;
 public class scheduleJob {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer jobId;
+	private int jobId;
 	@Column
 	private String jobName;
 	@Column
@@ -32,11 +33,11 @@ public class scheduleJob {
 	@JoinColumn(name = "userId")
 	private user userId;
 
-	public Integer getJobId() {
+	public int getJobId() {
 		return jobId;
 	}
 
-	public void setJobId(Integer jobId) {
+	public void setJobId(int jobId) {
 		this.jobId = jobId;
 	}
 

@@ -56,12 +56,11 @@ public class UserController {
 	@RequestMapping("/updateTask")
 	public void updateTask(HttpServletRequest request,
 			HttpServletResponse response, int userId, String hour, String min,
-			String email, String jobName, int isSend) {
+			String email, int isSend) {
 		System.out.println("修改定时任务开始");
 		user user = userService.find(userId);
 		user.setEmail(email);
 		scheduleJob job = user.getJob();
-		job.setJobName(jobName);
 		job.setCronExpression("00 " + min + " " + hour + " * * ?");
 		int send = job.getIsSend();
 		job.setIsSend(isSend);
@@ -80,7 +79,6 @@ public class UserController {
 		user user = userService.find(userId);
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("id", String.valueOf(userId));
-		map.put("jobName", user.getJob().getJobName());
 		map.put("email", user.getEmail());
 		String[] ss = user.getJob().getCronExpression().split(" ");
 		map.put("hour", ss[2]);

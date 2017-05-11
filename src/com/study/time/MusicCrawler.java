@@ -61,8 +61,9 @@ public class MusicCrawler extends Thread implements PageProcessor {
 		songs.clear();
 		s = Spider.create(new MusicCrawler()).addUrl(
 				"http://5sing.kugou.com/gd/gdList?&type=0&page=" + page)
-				.thread(20);
+				.thread(10);
 		s.run();
+		s.close();
 		System.out.println("获取音乐数据完成");
 	}
 

@@ -1,13 +1,17 @@
 package com.study.bean;
 
 import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
 /*
  * 用户
  */
@@ -15,23 +19,15 @@ import javax.persistence.OneToOne;
 public class user {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer userId;
+	private int userId;
 	@Column
 	private String email;
 
-	@Column
-	private HashSet<String> music = new HashSet<String>();
+	@OneToMany(mappedBy = "userId", fetch = FetchType.EAGER)
+	private Set<song> music = new HashSet<song>();
 
 	@OneToOne(mappedBy = "userId")
 	private scheduleJob job;
-
-	public Integer getUserId() {
-		return userId;
-	}
-
-	public void setUserId(Integer userId) {
-		this.userId = userId;
-	}
 
 	public String getEmail() {
 		return email;
@@ -41,11 +37,19 @@ public class user {
 		this.email = email;
 	}
 
-	public HashSet<String> getMusic() {
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+	public Set<song> getMusic() {
 		return music;
 	}
 
-	public void setMusic(HashSet<String> music) {
+	public void setMusic(Set<song> music) {
 		this.music = music;
 	}
 

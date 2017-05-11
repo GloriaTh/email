@@ -81,15 +81,6 @@ table {
 					</tr>
 					<tr>
 						<td>
-							<font style="font-weight: bold">任务名:</font>
-						</td>
-						<td>
-							<input class="easyui-validatebox textbox" type="text" id="jobName" data-options="missingMessage:'请输入任务名',required:true"
-							 value="${requestScope.job.jobName}"	name="jobName"></input>
-						</td>
-					</tr>
-					<tr>
-						<td>
 							<font style="font-weight: bold">发送时间:</font>
 						</td>
 						<td>
